@@ -1,0 +1,44 @@
+package com.ivancito.videoclub.entity.services;
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+
+import com.ivancito.videoclub.entity.dao.IVideoclubDao;
+import com.ivancito.videoclub.entity.models.Videoclub;
+
+public class VideoclubServiceImpl implements IVideoclubService {
+
+	@Autowired
+	private IVideoclubDao videoclubDao;
+	
+	@Override
+	public Videoclub get(long id) {
+		return videoclubDao.findById(id).get();
+	}
+
+	@Override
+	public List<Videoclub> getAll() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public void post(Videoclub película) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void put(Videoclub película, long id) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void delete(long id) {
+		// TODO Auto-generated method stub
+		
+	}
+	
+}

@@ -1,0 +1,5 @@
+package com.ivancito.videoclub.controllers;
+
+public class VideoclubController {
+
+}

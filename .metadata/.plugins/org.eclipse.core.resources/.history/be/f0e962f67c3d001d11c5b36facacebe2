@@ -1,0 +1,7 @@
+package com.ivancito.videoclub.entity.dao;
+
+public interface IVideoclubDao {
+
+	
+	
+}

@@ -1,0 +1,5 @@
+package com.ivancito.videoclub.exceptions;
+
+public class VideoclubValidationException {
+
+}

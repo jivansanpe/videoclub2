@@ -1,0 +1,49 @@
+package com.ivancito.videoclub.controllers;
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.web.bind.annotation.DeleteMapping;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+import com.ivancito.videoclub.entity.models.Videoclub;
+import com.ivancito.videoclub.entity.services.IVideoclubService;
+
+@RestController
+@CrossOrigin(origins = "http://localhost:8100")
+public class VideoclubController {
+	
+	@Autowired
+	IVideoclubService videoclubService;
+	
+	@GetMapping("/videoclub")
+	public List<Videoclub> getAllVideoclub() {
+		return videoclubService.getAll();
+	}
+	
+	@GetMapping("/bicycles/{id}")
+	public Videoclub getOne(@PathVariable(value = "id") long id) {
+		return videoclubService.get(id);
+	}
+	
+	@PostMapping("/videoclub")
+	public void post(Videoclub videoclub) {
+		videoclubService.post(videoclub);
+	}
+	
+	@PutMapping("/videoclub/{id}")
+	public void put(Videoclub videoclub, @PathVariable(value = "id") long id) {
+		videoclubService.put(videoclub, id);
+	}
+	
+	@DeleteMapping("/Videoclub/{id}")
+	public void delete(@PathVariable(value = "id") long id) {
+		videoclubService.delete(id);
+	}
+	
+}
